@@ -41,8 +41,10 @@
     GameView.prototype = new createjs.Container();
     /**
      * Game over event type
-     * @static GAME_OVER
+     * @property GAME_OVER
      * @type {String}
+     * @static
+     * @final
      */
     GameView.prototype.GAME_OVER = "gameOver";
     /**
@@ -60,7 +62,7 @@
     /**
      * Whether player won or lost
      * @method getPlayerWon
-     * @returns {Boolean} Whether player won or lost
+     * @return {Boolean} Whether player won or lost
      */
     GameView.prototype.getPlayerWon = function() {
         return this._playerWon;
@@ -68,7 +70,7 @@
     /**
      * Get final score
      * @method getFinalScore
-     * @returns {Number} Final score of player
+     * @return {Number} Final score of player
      */
     GameView.prototype.getFinalScore = function() {
         return this._finalScore;
@@ -76,7 +78,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @returns {simplejump.EventManager} Event manager
+     * @return {simplejump.EventManager} Event manager
      */
     GameView.prototype.getEventManager = function() {
         return this._eventManager;

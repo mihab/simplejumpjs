@@ -103,20 +103,24 @@
     Level.prototype = new createjs.Container();
     /**
      * Game over event type
-     * @static GAME_OVER
-     * @type {String} 
+     * @property GAME_OVER
+     * @type {String}
+     * @static
+     * @final 
      */
     Level.prototype.GAME_OVER = "gameOver";
     /**
      * Score change event type
-     * @static SCORE_CHANGE
+     * @property SCORE_CHANGE
      * @type {String}
+     * @static
+     * @final
      */
     Level.prototype.SCORE_CHANGE = "scoreChange";
     /**
      * Return whether the player won or lost
      * @method getPlayerWon
-     * @returns {Boolean} Whether player won or lost
+     * @return {Boolean} Whether player won or lost
      */
     Level.prototype.getPlayerWon = function() {
         return this._playerWon;
@@ -124,7 +128,7 @@
     /**
      * Returns the player score
      * @method getScore
-     * @returns {Number} Player score
+     * @return {Number} Player score
      */
     Level.prototype.getScore = function() {
         return this._score;
@@ -132,7 +136,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @returns {simplejump.EventManager} Event manager
+     * @return {simplejump.EventManager} Event manager
      */
     Level.prototype.getEventManager = function() {
         return this._eventManager;
@@ -266,7 +270,7 @@
      * Check if intersects, starting from up to bottom. The first platform that intersects is returned, or null if none intersects
      * @method _checkIntersects
      * @private
-     * @returns {simplejump.game.Platform} Platform or null if no platform intersects
+     * @return {simplejump.game.Platform} Platform or null if no platform intersects
      */
     Level.prototype._checkIntersects = function() {
         var i, platform;
@@ -320,7 +324,7 @@
      * @param {Number} b
      * @param {Number} c
      * @param {Number} d
-     * @returns {Number}
+     * @return {Number}
      */
     Level.prototype._linear = function(t, b, c, d) {
         return c * t / d + b;

@@ -10,44 +10,58 @@
     function PlayerSettings() {}
     /**
      * Duration of one player jump in miliseconds
-     * @static jumpDuration
+     * @property jumpDuration
      * @type {Number}
+     * @static
+     * @final
      */
     PlayerSettings.prototype.jumpDuration = 2000;
     /**
      * Vertical distance in pixels of one player jump
-     * @static jumpHeight
+     * @property jumpHeight
      * @type {Number}
+     * @static
+     * @final
      */
     PlayerSettings.prototype.jumpHeight = 200;
     /**
      * Horizontal distance in pixels of one player jump
-     * @static jumpDistance
+     * @property jumpDistance
      * @type {Number}
+     * @static
+     * @final
      */
     PlayerSettings.prototype.jumpDistance = 200;
     /**
      * Player width
-     * @static playerWidth
+     * @property playerWidth
      * @type {Number}
+     * @static
+     * @final
      */
     PlayerSettings.prototype.playerWidth = 50;
     /**
      * Player height
-     * @static playerHeight
+     * @property playerHeight
      * @type {Number}
+     * @static
+     * @final
      */
     PlayerSettings.prototype.playerHeight = 50;
     /**
      * Color of player box
-     * @static playerColor
+     * @property playerColor
      * @type {String}
+     * @static
+     * @final
      */
     PlayerSettings.prototype.playerColor = "#000000";
     /**
      * Maximum horizontal distance the player can move (from 0)
-     * @static maximumDistance
+     * @property maximumDistance
      * @type {Number}
+     * @static
+     * @final
      */
     PlayerSettings.prototype.maximumDistance = 500;
     window.simplejump = window.simplejump || {};

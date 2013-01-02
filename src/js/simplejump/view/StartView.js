@@ -58,14 +58,16 @@
     StartView.prototype = new createjs.Container();
     /**
      * Play clicked event type
-     * @static PLAY_CLICKED
+     * @property PLAY_CLICKED
      * @type {String}
+     * @static
+     * @final
      */
     StartView.prototype.PLAY_CLICKED = "playClicked";
     /**
      * Returns event manager
      * @method getEventManager
-     * @returns {simplejump.EventManager} Event manager
+     * @return {simplejump.EventManager} Event manager
      */
     StartView.prototype.getEventManager = function() {
         return this._eventManager;

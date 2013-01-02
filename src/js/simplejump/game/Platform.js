@@ -35,7 +35,7 @@
      * Checks whether the last PlayerMove intersected with this platform
      * @method checkIntersects
      * @param player {simplejump.game.Player} Player instance
-     * @returns {Boolean} Whether the last player move intersected with this platform
+     * @return {Boolean} Whether the last player move intersected with this platform
      */
     Platform.prototype.checkInteresects = function(player) {
         var playerMove, A, B, E, F;
@@ -62,7 +62,7 @@
      * @param B {createjs.Point}
      * @param E {createjs.Point}
      * @param F {createjs.Point}
-     * @returns {Boolean} Whether lines intersect
+     * @return {Boolean} Whether lines intersect
      */
     Platform.prototype._lineIntersectLine = function(A, B, E, F) {
         var ip, a1, a2, b1, b2, c1, c2, denom;

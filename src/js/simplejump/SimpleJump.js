@@ -125,5 +125,10 @@
         this._stage.addChild(this._endView);
     };
     window.simplejump = window.simplejump || {};
-    window.simplejump.SimpleJump = new SimpleJump();
+    window.simplejump.SimpleJump = function() {
+        return new SimpleJump();
+    };
+    window.onload = function() {
+        new SimpleJump().init();
+    };
 }());

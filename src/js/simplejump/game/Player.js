@@ -93,20 +93,26 @@
     Player.prototype = new createjs.Container();
     /**
      * Player moved event type
-     * @static PLAYER_MOVED
+     * @property PLAYER_MOVED
      * @type {String}
+     * @static
+     * @final
      */
     Player.prototype.PLAYER_MOVED = "playerMoved";
     /**
      * Player falling event type
-     * @static PLAYER_FALLING
+     * @property PLAYER_FALLING
      * @type {String}
+     * @static
+     * @final
      */
     Player.prototype.PLAYER_FALLING = "playerFalling";
     /**
      * Jump complete event type
-     * @static JUMP_COMPLETE
+     * @property JUMP_COMPLETE
      * @type {String}
+     * @static
+     * @final
      */
     Player.prototype.JUMP_COMPLETE = "jumpComplete";
     /**
@@ -139,7 +145,8 @@
     };
     /**
      * Gets the last player move
-     * @returns {simplejump.game.PlayerMove} Last player move
+     * @method getLastPlayerMove
+     * @return {simplejump.game.PlayerMove} Last player move
      */
     Player.prototype.getLastPlayerMove = function() {
         return this._lastPlayerMove;
@@ -147,7 +154,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @returns {simplejump.EventManager} Event manager
+     * @return {simplejump.EventManager} Event manager
      */
     Player.prototype.getEventManager = function() {
         return this._eventManager;
@@ -155,7 +162,7 @@
     /**
      * Return player settings
      * @method getPlayerSettings
-     * @returns {simplejump.game.PlayerSettings} Player Settings
+     * @return {simplejump.game.PlayerSettings} Player Settings
      */
     Player.prototype.getPlayerSettings = function() {
         return this._playerSettings;
@@ -234,7 +241,7 @@
      * @param b {Number}
      * @param c {Number}
      * @param d {Number}
-     * @returns {Number}
+     * @return {Number}
      */
     Player.prototype._quadEaseIn = function(t, b, c, d) {
         return c * (t /= d) * t + b;
@@ -247,7 +254,7 @@
      * @param b {Number}
      * @param c {Number}
      * @param d {Number}
-     * @returns {Number}
+     * @return {Number}
      */
     Player.prototype._quadEaseOut = function(t, b, c, d) {
         return -c * (t /= d) * (t - 2) + b;

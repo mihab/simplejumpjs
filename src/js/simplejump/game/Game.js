@@ -77,15 +77,17 @@
     }
     /**
      * Game over event type
-     * @static GAME_OVER
+     * @property GAME_OVER
      * @type {String}
+     * @static
+     * @final
      */
     Game.prototype.GAME_OVER = "gameOver";
     Game.prototype = new createjs.Container();
     /**
      * Return whether the player won or lost
      * @method getPlayerWon
-     * @returns {Boolean} Whether player won or lost
+     * @return {Boolean} Whether player won or lost
      */
     Game.prototype.getPlayerWon = function() {
         return this._playerWon;
@@ -93,7 +95,7 @@
     /**
      * Returns the final player score
      * @method getFinalScore
-     * @returns {Number} Final player score
+     * @return {Number} Final player score
      */
     Game.prototype.getFinalScore = function() {
         return this._score;
@@ -101,7 +103,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @returns {simplejump.EventManager} Event manager
+     * @return {simplejump.EventManager} Event manager
      */
     Game.prototype.getEventManager = function() {
         return this._eventManager;

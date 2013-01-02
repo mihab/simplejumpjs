@@ -9,20 +9,26 @@
     function PlatformSettings() {}
     /**
      * Width of platform
-     * @static platformWidth
+     * @property platformWidth
      * @type {Number}
+     * @static
+     * @final
      */
     PlatformSettings.prototype.platformWidth = 100;
     /**
      * Height of platform
-     * @static platformHeight
+     * @property platformHeight
      * @type {Number}
+     * @static
+     * @final
      */
     PlatformSettings.prototype.platformHeight = 5;
     /**
      * Color of platform box
-     * @static platformColor
+     * @property platformColor
      * @type {Number}
+     * @static
+     * @final
      */
     PlatformSettings.prototype.platformColor = "#6b8e23";
     window.simplejump = window.simplejump || {};

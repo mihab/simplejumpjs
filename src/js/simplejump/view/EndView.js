@@ -72,8 +72,10 @@
     EndView.prototype = new createjs.Container();
     /**
      * Back to start event type
-     * @static BACK_TO_START_CLICKED
+     * @property BACK_TO_START_CLICKED
      * @type {String}
+     * @static
+     * @final
      */
     EndView.prototype.BACK_TO_START_CLICKED = "backToStartClicked";
     /**
@@ -93,7 +95,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @returns {simplejump.EventManager} Event manager
+     * @return {simplejump.EventManager} Event manager
      */
     EndView.prototype.getEventManager = function() {
         return this._eventManager;

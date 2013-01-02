@@ -3,7 +3,7 @@
 
     /**
      * Simple event dispatching class
-     * @class
+     * @class EventManager
      * @constructor
      */
 
