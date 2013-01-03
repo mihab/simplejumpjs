@@ -1,0 +1,59 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>simplejumpjs</artifactId>
+	<groupId>simplejumpjs</groupId>
+	<version>1.0.0</version>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<configuration>
+							<target>
+								<taskdef name="jscomp"
+									classname="com.google.javascript.jscomp.ant.CompileTask"
+									classpath="maven.plugin.classpath" />
+								<jscomp output="bin/SimpleJump.min.js">
+									<sources dir="${basedir}/src/js/simplejump/game">
+										<file name="Game.js" />
+										<file name="Level.js" />
+										<file name="LevelSettings.js" />
+										<file name="Platform.js" />
+										<file name="PlatformSettings.js" />
+										<file name="Player.js" />
+										<file name="PlayerMove.js" />
+										<file name="PlayerSettings.js" />
+									</sources>
+									<sources dir="${basedir}/src/js/simplejump/view">
+										<file name="EndView.js" />
+										<file name="GameView.js" />
+										<file name="StartView.js" />
+									</sources>
+									<sources dir="${basedir}/src/js/simplejump">
+										<file name="EventManager.js" />
+										<file name="SimpleJump.js" />
+									</sources>
+								</jscomp>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.javascript</groupId>
+						<artifactId>closure-compiler</artifactId>
+						<version>r2388</version>
+						<scope>compile</scope>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
