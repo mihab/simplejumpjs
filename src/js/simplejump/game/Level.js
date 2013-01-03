@@ -6,37 +6,37 @@
      * @class Level
      * @extends createjs.Container
      * @constructor
-     * @param {simplejump.game.LevelSettings} levelSettings Settings of level
-     * @param {simplejump.game.PlayerSettings} playerSettings Settings of player
-     * @param {simplejump.game.PlatformSettings} platformSettings Settings of platform
+     * @param {LevelSettings} levelSettings Settings of level
+     * @param {PlayerSettings} playerSettings Settings of player
+     * @param {PlatformSettings} platformSettings Settings of platform
      */
 
     function Level(levelSettings, playerSettings, platformSettings) {
         /**
          * Event manager to dispatch events
          * @property _eventManager
-         * @type {simplejump.EventManager}
+         * @type {EventManager}
          * @private
          */
         this._eventManager = new simplejump.EventManager();
         /**
          * Settings of level
          * @property _levelSettings
-         * @type {simplejump.game.LevelSettings}
+         * @type {LevelSettings}
          * @private
          */
         this._levelSettings = levelSettings;
         /**
          * Settings of player
          * @property _playerSettings
-         * @type {simplejump.game.PlayerSettings}
+         * @type {PlayerSettings}
          * @private
          */
         this._playerSettings = playerSettings;
         /**
          * Settings of platform
          * @property _platformSettings
-         * @type {simplejump.game.PlatformSettings}
+         * @type {PlatformSettings}
          * @private
          */
         this._platformSettings = platformSettings;
@@ -50,7 +50,7 @@
         /**
          * Player instance
          * @property _player
-         * @type {simplejump.game.Player}
+         * @type {Player}
          * @private
          */
         this._player = null;
@@ -85,7 +85,7 @@
         /**
          * Last platform the player jumped on
          * @property _lastPlatform
-         * @type {simplejump.game.Platform}
+         * @type {Platform}
          * @private
          */
         this._lastPlatform = null;
@@ -136,7 +136,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @return {simplejump.EventManager} Event manager
+     * @return {EventManager} Event manager
      */
     Level.prototype.getEventManager = function() {
         return this._eventManager;
@@ -270,7 +270,7 @@
      * Check if intersects, starting from up to bottom. The first platform that intersects is returned, or null if none intersects
      * @method _checkIntersects
      * @private
-     * @return {simplejump.game.Platform} Platform or null if no platform intersects
+     * @return {Platform} Platform or null if no platform intersects
      */
     Level.prototype._checkIntersects = function() {
         var i, platform;
@@ -286,7 +286,7 @@
      * Checks for game over. This can be in 2 cases: player reached the end or player missed the platform on jump complete
      * @method _checkGameOver
      * @private
-     * @param {simplejump.game.Platform} platform Platform that intersects or null
+     * @param {Platform} platform Platform that intersects or null
      */
     Level.prototype._checkGameOver = function(platform) {
         if (platform === null) {
@@ -307,7 +307,7 @@
      * Updates the score when player successfully jumped on a platform and dispatches appropriate event
      * @method _updateScore
      * @private
-     * @param {simplejump.game.Platform} platform Platform the player intersects with
+     * @param {Platform} platform Platform the player intersects with
      */
     Level.prototype._updateScore = function(platform) {
         if (platform !== this._lastPlatform) {

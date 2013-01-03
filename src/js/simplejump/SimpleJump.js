@@ -1,3 +1,8 @@
+/**
+ * A simple jumping game inspired by Doodle Jump.
+ * @module SimpleJump
+ */
+
 (function() {
     "use strict";
 
@@ -11,7 +16,7 @@
         /**
          * LevelSettings to be used with game
          * @property _levelSettings
-         * @type {simplejump.LevelSettings}
+         * @type {LevelSettings}
          * @private
          */
         this._levelSettings = null;
@@ -39,21 +44,21 @@
         /**
          * Start view
          * @property _startView
-         * @type {simplejump.view.StartView}
+         * @type {StartView}
          * @private
          */
         this._startView = null;
         /**
          * Game view that holds the game
          * @property _canvas
-         * @type {simplejump.view.GameView}
+         * @type {GameView}
          * @private
          */
         this._gameView = null;
         /**
          * Last view that displays the result
          * @property _canvas
-         * @type {simplejump.view.EndView}
+         * @type {EndView}
          * @private
          */
         this._endView = null;

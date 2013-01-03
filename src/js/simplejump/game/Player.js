@@ -6,7 +6,7 @@
      * @class Player
      * @extends {createjs.Container}
      * @constructor
-     * @param {simplejump.game.PlayerSettings} playerSettings Settings of player
+     * @param {PlayerSettings} playerSettings Settings of player
      */
 
     function Player(playerSettings) {
@@ -14,14 +14,14 @@
         /**
          * Settings of player
          * @property _playerSettings
-         * @type {simplejump.game.PlayerSettings}
+         * @type {PlayerSettings}
          * @private
          */
         this._playerSettings = playerSettings;
         /**
          * Event manager to dispatch events
          * @property _eventManager
-         * @type {simplejump.EventManager}
+         * @type {EventManager}
          * @private
          */
         this._eventManager = new simplejump.EventManager();
@@ -77,7 +77,7 @@
         /**
          * Last player move
          * @property _lastPlayerMove
-         * @type {simplejump.PlayerMovew}
+         * @type {PlayerMove}
          * @private
          */
         this._lastPlayerMove = null;
@@ -146,7 +146,7 @@
     /**
      * Gets the last player move
      * @method getLastPlayerMove
-     * @return {simplejump.game.PlayerMove} Last player move
+     * @return {PlayerMove} Last player move
      */
     Player.prototype.getLastPlayerMove = function() {
         return this._lastPlayerMove;
@@ -154,7 +154,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @return {simplejump.EventManager} Event manager
+     * @return {EventManager} Event manager
      */
     Player.prototype.getEventManager = function() {
         return this._eventManager;
@@ -162,7 +162,7 @@
     /**
      * Return player settings
      * @method getPlayerSettings
-     * @return {simplejump.game.PlayerSettings} Player Settings
+     * @return {PlayerSettings} Player Settings
      */
     Player.prototype.getPlayerSettings = function() {
         return this._playerSettings;

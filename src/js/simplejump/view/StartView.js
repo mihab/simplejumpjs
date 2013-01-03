@@ -48,7 +48,7 @@
         /**
          * Event manager to dispatch events
          * @property _eventManager
-         * @type {simplejump.EventManager}
+         * @type {EventManager}
          * @private
          */
         this._eventManager = new simplejump.EventManager();
@@ -67,7 +67,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @return {simplejump.EventManager} Event manager
+     * @return {EventManager} Event manager
      */
     StartView.prototype.getEventManager = function() {
         return this._eventManager;

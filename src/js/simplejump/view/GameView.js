@@ -11,14 +11,14 @@
         /**
          * Event manager to dispatch events
          * @property _eventManager
-         * @type {simplejump.EventManager}
+         * @type {EventManager}
          * @private
          */
         this._eventManager = new simplejump.EventManager();
         /**
          * Game instance
          * @property _game
-         * @type {simplejump.game.Game}
+         * @type {Game}
          * @private
          */
         this._game = null;
@@ -78,7 +78,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @return {simplejump.EventManager} Event manager
+     * @return {EventManager} Event manager
      */
     GameView.prototype.getEventManager = function() {
         return this._eventManager;

@@ -5,14 +5,14 @@
      * Platform class that draws a single platform and check for intersects with player moves with it
      * @class Platform
      * @extends {createjs.Container}
-     * @constructor {simplejump.game.PlayerSettings} playerSettings Settings of player
+     * @constructor {PlayerSettings} playerSettings Settings of player
      */
 
     function Platform(platformSettings) {
         /**
          * Settings of player
          * @property _playerSettings
-         * @type {simplejump.game.PlayerSettings}
+         * @type {PlayerSettings}
          * @private
          */
         this._platformSettings = platformSettings;
@@ -34,7 +34,7 @@
     /**
      * Checks whether the last PlayerMove intersected with this platform
      * @method checkIntersects
-     * @param player {simplejump.game.Player} Player instance
+     * @param player {Player} Player instance
      * @return {Boolean} Whether the last player move intersected with this platform
      */
     Platform.prototype.checkInteresects = function(player) {

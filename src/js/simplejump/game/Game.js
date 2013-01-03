@@ -12,28 +12,28 @@
         /**
          * Event manager to dispatch events
          * @property _eventManager
-         * @type {simplejump.EventManager}
+         * @type {EventManager}
          * @private
          */
         this._eventManager = new simplejump.EventManager();
         /**
          * Settings of player
          * @property _playerSettings
-         * @type {simplejump.game.PlayerSettings}
+         * @type {PlayerSettings}
          * @private
          */
         this._playerSettings = new simplejump.game.PlayerSettings();
         /**
          * Settings of platform
          * @property _platformSettings
-         * @type {simplejump.game.PlatformSettings}
+         * @type {PlatformSettings}
          * @private
          */
         this._platformSettings = new simplejump.game.PlatformSettings();
         /**
          * Settings of level
          * @property _levelSettings
-         * @type {simplejump.game.LevelSettings}
+         * @type {LevelSettings}
          * @private
          */
         this._levelSettings = new simplejump.game.LevelSettings();
@@ -54,7 +54,7 @@
         /**
          * Level instance
          * @property _level
-         * @type {simplejump.game.Level}
+         * @type {Level}
          * @private
          */
         this._level = new simplejump.game.Level(this._levelSettings, this._playerSettings, this._platformSettings);
@@ -103,7 +103,7 @@
     /**
      * Returns event manager
      * @method getEventManager
-     * @return {simplejump.EventManager} Event manager
+     * @return {EventManager} Event manager
      */
     Game.prototype.getEventManager = function() {
         return this._eventManager;
