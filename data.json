@@ -1,0 +1,2057 @@
+{
+    "project": {
+        "name": "Simple Jump JS",
+        "description": "Documentation for the Simple Jump JS project",
+        "version": "1.0.0",
+        "url": "http://github.com/mihab/simplejumpjs"
+    },
+    "files": {
+        "game/Game.js": {
+            "name": "game/Game.js",
+            "modules": {},
+            "classes": {
+                "Game": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "game/Level.js": {
+            "name": "game/Level.js",
+            "modules": {},
+            "classes": {
+                "Level": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "game/LevelSettings.js": {
+            "name": "game/LevelSettings.js",
+            "modules": {},
+            "classes": {
+                "LevelSettings": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "game/Platform.js": {
+            "name": "game/Platform.js",
+            "modules": {},
+            "classes": {
+                "Platform": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "game/PlatformSettings.js": {
+            "name": "game/PlatformSettings.js",
+            "modules": {},
+            "classes": {
+                "PlatformSettings": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "game/Player.js": {
+            "name": "game/Player.js",
+            "modules": {},
+            "classes": {
+                "Player": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "game/PlayerMove.js": {
+            "name": "game/PlayerMove.js",
+            "modules": {},
+            "classes": {
+                "PlayerMove": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "game/PlayerSettings.js": {
+            "name": "game/PlayerSettings.js",
+            "modules": {},
+            "classes": {
+                "PlayerSettings": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "view/EndView.js": {
+            "name": "view/EndView.js",
+            "modules": {},
+            "classes": {
+                "EndView": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "view/GameView.js": {
+            "name": "view/GameView.js",
+            "modules": {},
+            "classes": {
+                "GameView": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "view/StartView.js": {
+            "name": "view/StartView.js",
+            "modules": {},
+            "classes": {
+                "StartView": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "EventManager.js": {
+            "name": "EventManager.js",
+            "modules": {},
+            "classes": {
+                "EventManager": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "SimpleJump.js": {
+            "name": "SimpleJump.js",
+            "modules": {
+                "SimpleJump": 1
+            },
+            "classes": {
+                "SimpleJump": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "SimpleJump": {
+            "name": "SimpleJump",
+            "submodules": {},
+            "classes": {
+                "Game": 1,
+                "Level": 1,
+                "LevelSettings": 1,
+                "Platform": 1,
+                "PlatformSettings": 1,
+                "Player": 1,
+                "PlayerMove": 1,
+                "PlayerSettings": 1,
+                "EndView": 1,
+                "GameView": 1,
+                "StartView": 1,
+                "EventManager": 1,
+                "SimpleJump": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "SimpleJump.js",
+            "line": 9,
+            "description": "A simple jumping game inspired by Doodle Jump."
+        }
+    },
+    "classes": {
+        "Game": {
+            "name": "Game",
+            "shortname": "Game",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "game/Game.js",
+            "line": 4,
+            "description": "Main game class that creates the level and scoreboard. Dispatches event with type: GAME_OVER",
+            "extends": "createjs.Container",
+            "is_constructor": 1
+        },
+        "Level": {
+            "name": "Level",
+            "shortname": "Level",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "game/Level.js",
+            "line": 4,
+            "description": "Level game class that contains the player and platform. Dispatches events with type: GAME_OVER, SCORE_CHANGE",
+            "extends": "createjs.Container",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "levelSettings",
+                    "description": "Settings of level",
+                    "type": "LevelSettings"
+                },
+                {
+                    "name": "playerSettings",
+                    "description": "Settings of player",
+                    "type": "PlayerSettings"
+                },
+                {
+                    "name": "platformSettings",
+                    "description": "Settings of platform",
+                    "type": "PlatformSettings"
+                }
+            ]
+        },
+        "LevelSettings": {
+            "name": "LevelSettings",
+            "shortname": "LevelSettings",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "game/LevelSettings.js",
+            "line": 4,
+            "description": "Settings of level",
+            "is_constructor": 1
+        },
+        "Platform": {
+            "name": "Platform",
+            "shortname": "Platform",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "game/Platform.js",
+            "line": 4,
+            "description": "Platform class that draws a single platform and check for intersects with player moves with it",
+            "extends": "{createjs.Container}",
+            "is_constructor": 1
+        },
+        "PlatformSettings": {
+            "name": "PlatformSettings",
+            "shortname": "PlatformSettings",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "game/PlatformSettings.js",
+            "line": 3,
+            "description": "Contains the platform settings",
+            "is_constructor": 1
+        },
+        "Player": {
+            "name": "Player",
+            "shortname": "Player",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "game/Player.js",
+            "line": 4,
+            "description": "Main player class that moves around the screen. Dispatches events with type: PLAYER_MOVED, PLAYER_FALLING, JUMP_COMPLETE",
+            "extends": "{createjs.Container}",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "playerSettings",
+                    "description": "Settings of player",
+                    "type": "PlayerSettings"
+                }
+            ]
+        },
+        "PlayerMove": {
+            "name": "PlayerMove",
+            "shortname": "PlayerMove",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "game/PlayerMove.js",
+            "line": 2,
+            "description": "Helper class representing one player move",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "fromX",
+                    "description": "From x",
+                    "type": "Number"
+                },
+                {
+                    "name": "toX",
+                    "description": "To x",
+                    "type": "Number"
+                },
+                {
+                    "name": "fromY",
+                    "description": "From y",
+                    "type": "Number"
+                },
+                {
+                    "name": "toY",
+                    "description": "To y",
+                    "type": "Number"
+                }
+            ]
+        },
+        "PlayerSettings": {
+            "name": "PlayerSettings",
+            "shortname": "PlayerSettings",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "game/PlayerSettings.js",
+            "line": 4,
+            "description": "Contains the Player settings",
+            "is_constructor": 1
+        },
+        "EndView": {
+            "name": "EndView",
+            "shortname": "EndView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "view/EndView.js",
+            "line": 4,
+            "description": "Final view that displays the game results. Dispatches event with type: BACK_TO_START_CLICKED",
+            "extends": "{createjs.Container}",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "Stage",
+                    "description": "to add items to",
+                    "type": "createjs.Stage"
+                }
+            ]
+        },
+        "GameView": {
+            "name": "GameView",
+            "shortname": "GameView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "view/GameView.js",
+            "line": 2,
+            "description": "GameView class that creates the game and displays it. Dispatches event with type: GAME_OVER",
+            "extends": "createjs.Container",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "Stage",
+                    "description": "to add items to",
+                    "type": "createjs.Stage"
+                }
+            ]
+        },
+        "StartView": {
+            "name": "StartView",
+            "shortname": "StartView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "view/StartView.js",
+            "line": 4,
+            "description": "Start view with player button. Dispatches event with type: PLAY_CLICKED",
+            "extends": "createjs.Container",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "Stage",
+                    "description": "to add items to",
+                    "type": "createjs.Stage"
+                }
+            ]
+        },
+        "EventManager": {
+            "name": "EventManager",
+            "shortname": "EventManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "file": "EventManager.js",
+            "line": 4,
+            "description": "Simple event dispatching class",
+            "is_constructor": 1
+        },
+        "SimpleJump": {
+            "name": "SimpleJump",
+            "shortname": "SimpleJump",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SimpleJump",
+            "namespace": "",
+            "file": "SimpleJump.js",
+            "line": 9,
+            "description": "Main class of Simple Jump game",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "game/Game.js",
+            "line": 12,
+            "description": "Event manager to dispatch events",
+            "itemtype": "property",
+            "name": "_eventManager",
+            "type": "{EventManager}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 19,
+            "description": "Settings of player",
+            "itemtype": "property",
+            "name": "_playerSettings",
+            "type": "{PlayerSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 26,
+            "description": "Settings of platform",
+            "itemtype": "property",
+            "name": "_platformSettings",
+            "type": "{PlatformSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 33,
+            "description": "Settings of level",
+            "itemtype": "property",
+            "name": "_levelSettings",
+            "type": "{LevelSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 40,
+            "description": "Whether player won or lost",
+            "itemtype": "property",
+            "name": "_playerWon",
+            "type": "{Boolean}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 47,
+            "description": "Level holder so the Level can safely move into negative Y coordinates",
+            "itemtype": "property",
+            "name": "_levelHolder",
+            "type": "{createjs.Container}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 54,
+            "description": "Level instance",
+            "itemtype": "property",
+            "name": "_level",
+            "type": "{Level}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 61,
+            "description": "Score board used for displaying the current score",
+            "itemtype": "property",
+            "name": "_scoreboard",
+            "type": "{createjs.Text}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 68,
+            "description": "Current player score",
+            "itemtype": "property",
+            "name": "_score",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 78,
+            "description": "Game over event type",
+            "itemtype": "property",
+            "name": "GAME_OVER",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 87,
+            "description": "Return whether the player won or lost",
+            "itemtype": "method",
+            "name": "getPlayerWon",
+            "return": {
+                "description": "Whether player won or lost",
+                "type": "Boolean"
+            },
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 95,
+            "description": "Returns the final player score",
+            "itemtype": "method",
+            "name": "getFinalScore",
+            "return": {
+                "description": "Final player score",
+                "type": "Number"
+            },
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 103,
+            "description": "Returns event manager",
+            "itemtype": "method",
+            "name": "getEventManager",
+            "return": {
+                "description": "Event manager",
+                "type": "EventManager"
+            },
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 111,
+            "description": "Sets up the UI",
+            "itemtype": "method",
+            "name": "_setupUI",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 129,
+            "description": "Draws the score board",
+            "itemtype": "method",
+            "name": "_drawScoreBoard",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 146,
+            "description": "Game over handler. Dispatches appropriate event",
+            "itemtype": "method",
+            "name": "_gameOver",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Game.js",
+            "line": 157,
+            "description": "Updates the score board when the player score changes",
+            "itemtype": "method",
+            "name": "_updateScore",
+            "access": "private",
+            "tagname": "",
+            "class": "Game"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 15,
+            "description": "Event manager to dispatch events",
+            "itemtype": "property",
+            "name": "_eventManager",
+            "type": "{EventManager}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 22,
+            "description": "Settings of level",
+            "itemtype": "property",
+            "name": "_levelSettings",
+            "type": "{LevelSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 29,
+            "description": "Settings of player",
+            "itemtype": "property",
+            "name": "_playerSettings",
+            "type": "{PlayerSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 36,
+            "description": "Settings of platform",
+            "itemtype": "property",
+            "name": "_platformSettings",
+            "type": "{PlatformSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 43,
+            "description": "Array containing all the platform in ascending (Y) order",
+            "itemtype": "property",
+            "name": "_platforms",
+            "type": "{Array}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 50,
+            "description": "Player instance",
+            "itemtype": "property",
+            "name": "_player",
+            "type": "{Player}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 57,
+            "description": "Y coordinate of camera when it started moving",
+            "itemtype": "property",
+            "name": "_cameraStartY",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 64,
+            "description": "Y coordinate where camera should move",
+            "itemtype": "property",
+            "name": "_cameraEndY",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 71,
+            "description": "Time of camera move start",
+            "itemtype": "property",
+            "name": "_cameraStartTime",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 78,
+            "description": "Whether player won or lost",
+            "itemtype": "property",
+            "name": "_playerWon",
+            "type": "{Boolean}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 85,
+            "description": "Last platform the player jumped on",
+            "itemtype": "property",
+            "name": "_lastPlatform",
+            "type": "{Platform}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 92,
+            "description": "Player score",
+            "itemtype": "property",
+            "name": "_score",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 104,
+            "description": "Game over event type",
+            "itemtype": "property",
+            "name": "GAME_OVER",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 112,
+            "description": "Score change event type",
+            "itemtype": "property",
+            "name": "SCORE_CHANGE",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 120,
+            "description": "Return whether the player won or lost",
+            "itemtype": "method",
+            "name": "getPlayerWon",
+            "return": {
+                "description": "Whether player won or lost",
+                "type": "Boolean"
+            },
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 128,
+            "description": "Returns the player score",
+            "itemtype": "method",
+            "name": "getScore",
+            "return": {
+                "description": "Player score",
+                "type": "Number"
+            },
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 136,
+            "description": "Returns event manager",
+            "itemtype": "method",
+            "name": "getEventManager",
+            "return": {
+                "description": "Event manager",
+                "type": "EventManager"
+            },
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 144,
+            "description": "Cleans up/removes all event listeners",
+            "itemtype": "method",
+            "name": "cleanup",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 152,
+            "description": "Simple camera animation to follow the player",
+            "itemtype": "method",
+            "name": "tick",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 170,
+            "description": "Configures the player and adds him to the stage",
+            "itemtype": "method",
+            "name": "_addPlayer",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 188,
+            "description": "Randomly generates the platforms",
+            "itemtype": "method",
+            "name": "_generatePlatforms",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 246,
+            "description": "Handler when player falling. Checks for intersects with platforms",
+            "itemtype": "method",
+            "name": "_playerFalling",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 261,
+            "description": "Handler for player jump complete. Checks for game over",
+            "itemtype": "method",
+            "name": "_jumpComplete",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 269,
+            "description": "Check if intersects, starting from up to bottom. The first platform that intersects is returned, or null if none intersects",
+            "itemtype": "method",
+            "name": "_checkIntersects",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "Platform or null if no platform intersects",
+                "type": "Platform"
+            },
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 285,
+            "description": "Checks for game over. This can be in 2 cases: player reached the end or player missed the platform on jump complete",
+            "itemtype": "method",
+            "name": "_checkGameOver",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "platform",
+                    "description": "Platform that intersects or null",
+                    "type": "Platform"
+                }
+            ],
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 306,
+            "description": "Updates the score when player successfully jumped on a platform and dispatches appropriate event",
+            "itemtype": "method",
+            "name": "_updateScore",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "platform",
+                    "description": "Platform the player intersects with",
+                    "type": "Platform"
+                }
+            ],
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 319,
+            "description": "Simple linear easing",
+            "itemtype": "method",
+            "name": "_linear",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "b",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "c",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "d",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Level"
+        },
+        {
+            "file": "game/Level.js",
+            "line": 332,
+            "description": "Start to move camera",
+            "itemtype": "method",
+            "name": "_moveCamera",
+            "access": "private",
+            "tagname": "",
+            "class": "Level"
+        },
+        {
+            "file": "game/LevelSettings.js",
+            "line": 11,
+            "description": "Width of level",
+            "itemtype": "property",
+            "name": "levelWidth",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "LevelSettings"
+        },
+        {
+            "file": "game/LevelSettings.js",
+            "line": 19,
+            "description": "Height of level",
+            "itemtype": "property",
+            "name": "levelHeight",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "LevelSettings"
+        },
+        {
+            "file": "game/LevelSettings.js",
+            "line": 27,
+            "description": "Color of level background",
+            "itemtype": "property",
+            "name": "levelColor",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "LevelSettings"
+        },
+        {
+            "file": "game/LevelSettings.js",
+            "line": 35,
+            "description": "Points to add when a player successfully jumps on a platform",
+            "itemtype": "property",
+            "name": "platformScorePoints",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "LevelSettings"
+        },
+        {
+            "file": "game/Platform.js",
+            "line": 12,
+            "description": "Settings of player",
+            "itemtype": "property",
+            "name": "_playerSettings",
+            "type": "{PlayerSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "Platform"
+        },
+        {
+            "file": "game/Platform.js",
+            "line": 23,
+            "description": "Draws the platform rectangle",
+            "itemtype": "method",
+            "name": "drawPlatform",
+            "class": "Platform"
+        },
+        {
+            "file": "game/Platform.js",
+            "line": 34,
+            "description": "Checks whether the last PlayerMove intersected with this platform",
+            "itemtype": "method",
+            "name": "checkIntersects",
+            "params": [
+                {
+                    "name": "player",
+                    "description": "Player instance",
+                    "type": "Player"
+                }
+            ],
+            "return": {
+                "description": "Whether the last player move intersected with this platform",
+                "type": "Boolean"
+            },
+            "class": "Platform"
+        },
+        {
+            "file": "game/Platform.js",
+            "line": 57,
+            "description": "Checks whether two line segments intersect",
+            "itemtype": "method",
+            "name": "_lineIntersectLine",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "A",
+                    "description": "",
+                    "type": "createjs.Point"
+                },
+                {
+                    "name": "B",
+                    "description": "",
+                    "type": "createjs.Point"
+                },
+                {
+                    "name": "E",
+                    "description": "",
+                    "type": "createjs.Point"
+                },
+                {
+                    "name": "F",
+                    "description": "",
+                    "type": "createjs.Point"
+                }
+            ],
+            "return": {
+                "description": "Whether lines intersect",
+                "type": "Boolean"
+            },
+            "class": "Platform"
+        },
+        {
+            "file": "game/PlatformSettings.js",
+            "line": 10,
+            "description": "Width of platform",
+            "itemtype": "property",
+            "name": "platformWidth",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlatformSettings"
+        },
+        {
+            "file": "game/PlatformSettings.js",
+            "line": 18,
+            "description": "Height of platform",
+            "itemtype": "property",
+            "name": "platformHeight",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlatformSettings"
+        },
+        {
+            "file": "game/PlatformSettings.js",
+            "line": 26,
+            "description": "Color of platform box",
+            "itemtype": "property",
+            "name": "platformColor",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlatformSettings"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 14,
+            "description": "Settings of player",
+            "itemtype": "property",
+            "name": "_playerSettings",
+            "type": "{PlayerSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 21,
+            "description": "Event manager to dispatch events",
+            "itemtype": "property",
+            "name": "_eventManager",
+            "type": "{EventManager}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 28,
+            "description": "Time jump started",
+            "itemtype": "property",
+            "name": "_jumpStartTime",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 35,
+            "description": "Y coordinate of player when the jump started",
+            "itemtype": "property",
+            "name": "_jumpStartY",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 42,
+            "description": "Whether the player is currently moving up or down",
+            "itemtype": "property",
+            "name": "_up",
+            "type": "{Boolean}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 49,
+            "description": "Whether left key is down",
+            "itemtype": "property",
+            "name": "_leftDown",
+            "type": "{Boolean}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 56,
+            "description": "Whether right key is down",
+            "itemtype": "property",
+            "name": "_rightDown",
+            "type": "{Boolean}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 63,
+            "description": "Time either the left key or right key were pushed down",
+            "itemtype": "property",
+            "name": "_timeDown",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 70,
+            "description": "X coordinate the player was the either the left or the right key was pushed down",
+            "itemtype": "property",
+            "name": "_xDown",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 77,
+            "description": "Last player move",
+            "itemtype": "property",
+            "name": "_lastPlayerMove",
+            "type": "{PlayerMove}",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 94,
+            "description": "Player moved event type",
+            "itemtype": "property",
+            "name": "PLAYER_MOVED",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 102,
+            "description": "Player falling event type",
+            "itemtype": "property",
+            "name": "PLAYER_FALLING",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 110,
+            "description": "Jump complete event type",
+            "itemtype": "property",
+            "name": "JUMP_COMPLETE",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 118,
+            "description": "Draws the player box",
+            "itemtype": "method",
+            "name": "drawPlayer",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 129,
+            "description": "Starts a jump from the current player Y-coordinate",
+            "itemtype": "method",
+            "name": "jump",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 139,
+            "description": "Stops the jump, leaving the player at the current Y coordinates",
+            "itemtype": "method",
+            "name": "stopJump",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 146,
+            "description": "Gets the last player move",
+            "itemtype": "method",
+            "name": "getLastPlayerMove",
+            "return": {
+                "description": "Last player move",
+                "type": "PlayerMove"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 154,
+            "description": "Returns event manager",
+            "itemtype": "method",
+            "name": "getEventManager",
+            "return": {
+                "description": "Event manager",
+                "type": "EventManager"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 162,
+            "description": "Return player settings",
+            "itemtype": "method",
+            "name": "getPlayerSettings",
+            "return": {
+                "description": "Player Settings",
+                "type": "PlayerSettings"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 170,
+            "description": "Cleans up/removes all event listeners",
+            "itemtype": "method",
+            "name": "cleanup",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 179,
+            "description": "Main loop which moves the player both on the X and Y coordinates",
+            "itemtype": "method",
+            "name": "tick",
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 236,
+            "description": "Simple quad ease in used for player falling",
+            "itemtype": "method",
+            "name": "_quadEaseIn",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "b",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "c",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "d",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 249,
+            "description": "Simple quad ease out used for player falling raising",
+            "itemtype": "method",
+            "name": "_quadEaseOut",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "b",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "c",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "d",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "game/Player.js",
+            "line": 282,
+            "description": "Key down handler, starts to move player if left or right key is pressed",
+            "itemtype": "method",
+            "name": "_handleKeyUp",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Event object",
+                    "type": "Object"
+                }
+            ],
+            "class": "Player"
+        },
+        {
+            "file": "game/PlayerMove.js",
+            "line": 13,
+            "description": "From x",
+            "itemtype": "property",
+            "name": "fromX",
+            "type": "{Number}",
+            "class": "PlayerMove"
+        },
+        {
+            "file": "game/PlayerMove.js",
+            "line": 19,
+            "description": "To x",
+            "itemtype": "property",
+            "name": "toX",
+            "type": "{Number}",
+            "class": "PlayerMove"
+        },
+        {
+            "file": "game/PlayerMove.js",
+            "line": 25,
+            "description": "From y",
+            "itemtype": "property",
+            "name": "fromY",
+            "type": "{Number}",
+            "class": "PlayerMove"
+        },
+        {
+            "file": "game/PlayerMove.js",
+            "line": 31,
+            "description": "To y",
+            "itemtype": "property",
+            "name": "toY",
+            "type": "{Number}",
+            "class": "PlayerMove"
+        },
+        {
+            "file": "game/PlayerSettings.js",
+            "line": 11,
+            "description": "Duration of one player jump in miliseconds",
+            "itemtype": "property",
+            "name": "jumpDuration",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlayerSettings"
+        },
+        {
+            "file": "game/PlayerSettings.js",
+            "line": 19,
+            "description": "Vertical distance in pixels of one player jump",
+            "itemtype": "property",
+            "name": "jumpHeight",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlayerSettings"
+        },
+        {
+            "file": "game/PlayerSettings.js",
+            "line": 27,
+            "description": "Horizontal distance in pixels of one player jump",
+            "itemtype": "property",
+            "name": "jumpDistance",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlayerSettings"
+        },
+        {
+            "file": "game/PlayerSettings.js",
+            "line": 35,
+            "description": "Player width",
+            "itemtype": "property",
+            "name": "playerWidth",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlayerSettings"
+        },
+        {
+            "file": "game/PlayerSettings.js",
+            "line": 43,
+            "description": "Player height",
+            "itemtype": "property",
+            "name": "playerHeight",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlayerSettings"
+        },
+        {
+            "file": "game/PlayerSettings.js",
+            "line": 51,
+            "description": "Color of player box",
+            "itemtype": "property",
+            "name": "playerColor",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "PlayerSettings"
+        },
+        {
+            "file": "game/PlayerSettings.js",
+            "line": 59,
+            "description": "Maximum horizontal distance the player can move (from 0)",
+            "itemtype": "property",
+            "name": "maximumDistance",
+            "type": "{Number}",
+            "static": 1,
+            "final": 1,
+            "class": "PlayerSettings"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 13,
+            "description": "Stage to add items to",
+            "itemtype": "property",
+            "name": "_stage",
+            "type": "{createjs.Stage}",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 20,
+            "description": "Event manager to dispatch events",
+            "itemtype": "property",
+            "name": "_eventManager",
+            "type": "{EventManager}",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 27,
+            "description": "Label of button",
+            "itemtype": "property",
+            "name": "_label",
+            "type": "{createjs.Text}",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 34,
+            "description": "Result text",
+            "itemtype": "property",
+            "name": "_resultTxt",
+            "type": "{createjs.Text}",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 41,
+            "description": "Score text",
+            "itemtype": "property",
+            "name": "_scoreTxt",
+            "type": "{createjs.Text}",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 48,
+            "description": "Out button shape",
+            "itemtype": "property",
+            "name": "_outShape",
+            "type": "{createjs.Shape}",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 55,
+            "description": "Over button shape",
+            "itemtype": "property",
+            "name": "_overShape",
+            "type": "{createjs.Shape}",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 62,
+            "description": "Press button shape",
+            "itemtype": "property",
+            "name": "_pressShape",
+            "type": "{createjs.Shape}",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 73,
+            "description": "Back to start event type",
+            "itemtype": "property",
+            "name": "BACK_TO_START_CLICKED",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 81,
+            "description": "Set whether the player won or lost along with the final score",
+            "itemtype": "method",
+            "name": "setResult",
+            "params": [
+                {
+                    "name": "won",
+                    "description": "Whether Player won or lost",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "score",
+                    "description": "Final player score",
+                    "type": "Number"
+                }
+            ],
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 95,
+            "description": "Returns event manager",
+            "itemtype": "method",
+            "name": "getEventManager",
+            "return": {
+                "description": "Event manager",
+                "type": "EventManager"
+            },
+            "class": "EndView"
+        },
+        {
+            "file": "view/EndView.js",
+            "line": 103,
+            "description": "Sets up the UI",
+            "itemtype": "method",
+            "name": "_setupUI",
+            "access": "private",
+            "tagname": "",
+            "class": "EndView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 11,
+            "description": "Event manager to dispatch events",
+            "itemtype": "property",
+            "name": "_eventManager",
+            "type": "{EventManager}",
+            "access": "private",
+            "tagname": "",
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 18,
+            "description": "Game instance",
+            "itemtype": "property",
+            "name": "_game",
+            "type": "{Game}",
+            "access": "private",
+            "tagname": "",
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 25,
+            "description": "Whether player won or lost the game",
+            "itemtype": "property",
+            "name": "_playerWon",
+            "type": "{Boolean}",
+            "access": "private",
+            "tagname": "",
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 32,
+            "description": "Final score the player achieved",
+            "itemtype": "property",
+            "name": "_finalScore",
+            "type": "{Number}",
+            "access": "private",
+            "tagname": "",
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 42,
+            "description": "Game over event type",
+            "itemtype": "property",
+            "name": "GAME_OVER",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 50,
+            "description": "Starts the game",
+            "itemtype": "method",
+            "name": "startGame",
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 62,
+            "description": "Whether player won or lost",
+            "itemtype": "method",
+            "name": "getPlayerWon",
+            "return": {
+                "description": "Whether player won or lost",
+                "type": "Boolean"
+            },
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 70,
+            "description": "Get final score",
+            "itemtype": "method",
+            "name": "getFinalScore",
+            "return": {
+                "description": "Final score of player",
+                "type": "Number"
+            },
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 78,
+            "description": "Returns event manager",
+            "itemtype": "method",
+            "name": "getEventManager",
+            "return": {
+                "description": "Event manager",
+                "type": "EventManager"
+            },
+            "class": "GameView"
+        },
+        {
+            "file": "view/GameView.js",
+            "line": 86,
+            "description": "Game over handler",
+            "itemtype": "method",
+            "name": "_gameOver",
+            "access": "private",
+            "tagname": "",
+            "class": "GameView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 13,
+            "description": "Stage to add items to",
+            "itemtype": "property",
+            "name": "_stage",
+            "type": "{createjs.Stage}",
+            "access": "private",
+            "tagname": "",
+            "class": "StartView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 20,
+            "description": "Label of button",
+            "itemtype": "property",
+            "name": "_label",
+            "type": "{createjs.Text}",
+            "access": "private",
+            "tagname": "",
+            "class": "StartView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 27,
+            "description": "Over button shape",
+            "itemtype": "property",
+            "name": "_overShape",
+            "type": "{createjs.Shape}",
+            "access": "private",
+            "tagname": "",
+            "class": "StartView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 34,
+            "description": "Out button shape",
+            "itemtype": "property",
+            "name": "_outShape",
+            "type": "{createjs.Shape}",
+            "access": "private",
+            "tagname": "",
+            "class": "StartView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 41,
+            "description": "Press button shape",
+            "itemtype": "property",
+            "name": "_pressShape",
+            "type": "{createjs.Shape}",
+            "access": "private",
+            "tagname": "",
+            "class": "StartView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 48,
+            "description": "Event manager to dispatch events",
+            "itemtype": "property",
+            "name": "_eventManager",
+            "type": "{EventManager}",
+            "access": "private",
+            "tagname": "",
+            "class": "StartView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 59,
+            "description": "Play clicked event type",
+            "itemtype": "property",
+            "name": "PLAY_CLICKED",
+            "type": "{String}",
+            "static": 1,
+            "final": 1,
+            "class": "StartView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 67,
+            "description": "Returns event manager",
+            "itemtype": "method",
+            "name": "getEventManager",
+            "return": {
+                "description": "Event manager",
+                "type": "EventManager"
+            },
+            "class": "StartView"
+        },
+        {
+            "file": "view/StartView.js",
+            "line": 75,
+            "description": "Sets up the UI",
+            "itemtype": "method",
+            "name": "_setupUI",
+            "access": "private",
+            "tagname": "",
+            "class": "StartView"
+        },
+        {
+            "file": "EventManager.js",
+            "line": 11,
+            "description": "Array of all listeners",
+            "itemtype": "property",
+            "name": "_listeners",
+            "type": "{Array}",
+            "access": "private",
+            "tagname": "",
+            "class": "EventManager"
+        },
+        {
+            "file": "EventManager.js",
+            "line": 20,
+            "description": "Add a listener for an event",
+            "itemtype": "method",
+            "name": "addListener",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "Type of listener",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "Function callback",
+                    "type": "Function"
+                }
+            ],
+            "class": "EventManager"
+        },
+        {
+            "file": "EventManager.js",
+            "line": 42,
+            "description": "Removes a listener for an event",
+            "itemtype": "method",
+            "name": "removeListener",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "Type of listener",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "Function callback",
+                    "type": "Function"
+                }
+            ],
+            "class": "EventManager"
+        },
+        {
+            "file": "EventManager.js",
+            "line": 61,
+            "description": "Dispatch event type to all subscribed listeners",
+            "itemtype": "method",
+            "name": "dispatchEvent",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "Event type to dispatch",
+                    "type": "String"
+                }
+            ],
+            "class": "EventManager"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 16,
+            "description": "LevelSettings to be used with game",
+            "itemtype": "property",
+            "name": "_levelSettings",
+            "type": "{LevelSettings}",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 23,
+            "description": "Canvas object to draw the game on",
+            "itemtype": "property",
+            "name": "_canvas",
+            "type": "{Object}",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 30,
+            "description": "Main stage that holds all other DisplayObjects",
+            "itemtype": "property",
+            "name": "_stage",
+            "type": "{createjs.Stage}",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 37,
+            "description": "Background DisplayObject",
+            "itemtype": "property",
+            "name": "_background",
+            "type": "{createjs.Container}",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 44,
+            "description": "Start view",
+            "itemtype": "property",
+            "name": "_startView",
+            "type": "{StartView}",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 51,
+            "description": "Game view that holds the game",
+            "itemtype": "property",
+            "name": "_canvas",
+            "type": "{GameView}",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 58,
+            "description": "Last view that displays the result",
+            "itemtype": "property",
+            "name": "_canvas",
+            "type": "{EndView}",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 67,
+            "description": "Sets up the simple jump game",
+            "itemtype": "method",
+            "name": "init",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 101,
+            "description": "Shows the start view",
+            "itemtype": "method",
+            "name": "_showStartView",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 111,
+            "description": "Shows the game view",
+            "itemtype": "method",
+            "name": "_showGameView",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        },
+        {
+            "file": "SimpleJump.js",
+            "line": 122,
+            "description": "Shows the end view",
+            "itemtype": "method",
+            "name": "_showEndView",
+            "access": "private",
+            "tagname": "",
+            "class": "SimpleJump",
+            "module": "SimpleJump"
+        }
+    ],
+    "warnings": []
+}
